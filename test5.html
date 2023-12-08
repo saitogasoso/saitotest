@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotinha Sem Roupa</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Cor do texto branca */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Fonte padrão do navegador */
+        }
+
+        button {
+            margin: 10px;
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: #fff; /* Cor do texto do botão */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="frase">Fotinha sem roupa hoje?</h1>
+
+<button onclick="showWaitingMessage()">Sim</button>
+<button id="naoButton" onclick="moveButton()">Não</button>
+
+<script>
+    function showWaitingMessage() {
+        document.body.innerHTML = '<h1>Estou esperando :)</h1><p>:)</p>';
+    }
+
+    function moveButton() {
+        const button = document.getElementById('naoButton');
+        const newX = Math.random() * (window.innerWidth - button.clientWidth);
+        const newY = Math.random() * (window.innerHeight - button.clientHeight);
+
+        button.style.position = 'absolute';
+        button.style.left = newX + 'px';
+        button.style.top = newY + 'px';
+    }
+</script>
+
+</body>
+</html>
